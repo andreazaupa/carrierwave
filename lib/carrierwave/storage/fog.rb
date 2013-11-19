@@ -341,6 +341,12 @@ module CarrierWave
             URI.decode(file_url).gsub(/.*\/(.*?$)/, '\1').split('?').first
           end
         end
+        
+        ##
+        #dity patch for carrierwave-meta
+        def original_filename(options = {})
+          filename options
+        end
 
       private
 
